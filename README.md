@@ -13,7 +13,6 @@
 ---
 
 ## 📁 Structure · 結構
-
 | Path | Purpose |
 |------|---------|
 | `src/extract.py` | Reads raw data (CSV) into a DataFrame |
