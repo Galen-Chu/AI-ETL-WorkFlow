@@ -29,12 +29,20 @@
 
 ## 🚀 Local Development · 本地開發
 
+Requires Python 3.11+ (CI tests 3.11 / 3.13 / 3.14).
+
 ```bash
+python -m venv .venv
+.venv\Scripts\activate          # Windows — use `source .venv/bin/activate` on macOS/Linux
 pip install -r requirements-dev.txt
 flake8 src tests
-pytest -v
+mypy src
+pytest -v --cov=src
 python -m src.pipeline --source data/raw/input.csv --dest data/processed/output.csv
 ```
+
+Add `--verbose` (`-v`) to the pipeline command for debug-level logging; by default
+each stage logs its row counts (extract → transform → load).
 
 ---
 
